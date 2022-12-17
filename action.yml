@@ -1,0 +1,15 @@
+name: 'Container Structure Test'
+description: 'scrutinize the structure of a container image'
+inputs:
+  image:
+    description: 'The container image'
+    required: true
+  configFile:
+    description: 'Path to the container structure test config'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.image }}
+    - ${{ inputs.configFile }}
